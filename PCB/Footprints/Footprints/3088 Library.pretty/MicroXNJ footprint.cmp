@@ -1,0 +1,11 @@
+Cmp-Mod V01 Created by PcbNew   date = 2022/03/17 09:27:02
+
+BeginCmp
+TimeStamp = 909b030b-fa1a-4fe8-b1ee-422b4d9e23cf
+Path = 
+Reference = USB1;
+ValeurCmp = MICRO-USB-SMD_MICROXNJ;
+IdModule  = EEE3088:MICRO-USB-SMD_MICROXNJ;
+EndCmp
+
+EndListe
