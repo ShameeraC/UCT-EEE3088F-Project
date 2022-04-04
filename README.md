@@ -11,7 +11,7 @@ This repo has the following subfolders, which provide a useful common structure 
 
 # Group Members
 JONATHAN APPS \
-SHAMEERA CASSIM \ 
+SHAMEERA CASSIM \
 JAHAR PERSAD 
 
 # License
