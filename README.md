@@ -10,9 +10,9 @@ This repo has the following subfolders, which provide a useful common structure 
     * Simulation: Any simulation files (eg SPICE) or design stage generated results (Eg matlab or excel) will be stored here.
 
 # Group Members
-JONATHAN APPS 
-SHAMEERA CASSIM 
-JAHAR PERSAD
+JONATHAN APPS \
+SHAMEERA CASSIM \ 
+JAHAR PERSAD 
 
 # License
 [Creative Commons Attribution 4.0 International license](https://choosealicense.com/licenses/cc-by-4.0/)
