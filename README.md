@@ -1,6 +1,6 @@
 # EEE3088F Group 18 Project
 
-#Directories:
+# Directories:
 This repo has the following subfolders, which provide a useful common structure for custom electronics projects:
     * Documentation: Project documentation (including submissions) and component datasheets are stored here.
     * Firmware: Any software developed for the hat will be stored here.
