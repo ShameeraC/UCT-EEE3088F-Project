@@ -1,0 +1,30 @@
+ERC report (2022/03/18 20:44:53, Encoding UTF8)
+
+***** Sheet /
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; Severity: error (excluded)
+    @(253,37 mm, 34,29 mm): Symbol #PWR012 [VDD] Pin 1 [VDD, Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; Severity: error (excluded)
+    @(231,78 mm, 24,13 mm): Symbol #PWR05 [+3V0] Pin 1 [+3V0, Power input, Line]
+
+***** Sheet /Power/
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; Severity: error (excluded)
+    @(226,06 mm, 133,60 mm): Symbol VoltageRegulator1 [KA78M05_TO252] Pin 1 [VI, Power input, Line]
+[pin_to_pin]: Pins of type Power output and Power output are connected
+    ; Severity: error (excluded)
+    @(248,16 mm, 80,01 mm): Symbol J5 [USB_B_Micro] Pin 5 [GND, Power output, Line]
+    @(217,93 mm, 106,17 mm): Symbol J6 [USB_B_Micro] Pin 5 [GND, Power output, Line]
+
+***** Sheet /Sensing/
+
+***** Sheet /microcontroller_interfacing/
+[multiple_net_names]: Both GND = Normal R{slash}W operations and VCC = Full 2K Array are attached to the same items; GND = Normal R{slash}W operations will be used in the netlist
+    ; Severity: warning (excluded)
+    @(263,40 mm, 147,83 mm): Label 'GND = Normal R/W operations'
+    @(263,40 mm, 145,29 mm): Label 'VCC = Full 2K Array'
+
+***** Sheet /Outputs/
+
+ ** ERC messages: 5  Errors 4  Warnings 1
