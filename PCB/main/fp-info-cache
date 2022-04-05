@@ -1,18 +1,4 @@
-20125880886540906
-3088 Library
-PCB_MicroXNJ_2022-03-17
-
-
-0
-0
-0
-1825910-6
-SW_1825910-6-4
-
-
-0
-4
-4
+20112700833838699
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2379,13 +2365,6 @@ speaker CUI
 0
 2
 2
-CH340C
-SOIC127P600X180-16N
-
-
-0
-16
-16
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -52268,13 +52247,6 @@ emi filter
 0
 5
 5
-Footprints
-PCB_Pushbutton_2022-03-17.zip
-
-
-0
-0
-0
 Fuse
 Fuse_0402_1005Metric
 Fuse SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
@@ -57602,13 +57574,6 @@ Yellow 5381 Series LED
 0
 2
 2
-LM75BD
-SOIC127P600X175-8N
-
-
-0
-8
-8
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -78630,20 +78595,6 @@ rotary encoder
 0
 5
 4
-SOIC127P600X175-8N
-EEPROM
-
-
-0
-8
-8
-SOIC127P600X175-8N
-SOIC127P600X175-8N
-
-
-0
-8
-8
 Sensor
 Aosong_DHT11_5.5x12.0_P2.54mm
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/DHT11.pdf
