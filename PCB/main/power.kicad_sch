@@ -1091,7 +1091,7 @@
     (uuid f653984e-336c-47a7-a019-3cc4a84878d7)
   )
 
-  (hierarchical_label "Output" (shape input) (at 254.2794 126.8984 0)
+  (hierarchical_label "Output" (shape output) (at 254.2794 126.8984 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 49d8c6ac-67f6-40f5-8fd4-7a25b2cb36e4)
   )
