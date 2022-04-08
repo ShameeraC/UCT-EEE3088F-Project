@@ -800,7 +800,6 @@
     )
   )
 
-
   (junction (at 98.044 67.818) (diameter 0) (color 0 0 0 0)
     (uuid 0083f166-7d82-480f-a516-bc3e5d0aaae5)
   )
@@ -1577,6 +1576,9 @@
     (property "Datasheet" "~" (id 3) (at 210.058 148.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "Populate" "DNP" (id 4) (at 204.978 148.59 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid c83a3b8c-6ec4-4611-a903-e4a47c28d917))
   )
 
@@ -1690,6 +1692,9 @@
     (property "Datasheet" "~" (id 3) (at 209.55 134.366 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "Populate" "DNP" (id 4) (at 204.47 134.366 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 78f34bcb-32d4-4ce5-a2fb-901d8def6c41))
   )
 
@@ -1742,6 +1747,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 209.55 141.478 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Populate" "DNP" (id 4) (at 204.47 141.478 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid d62edf9c-90bf-49f4-9153-3e53c88f970d))
@@ -1868,13 +1876,13 @@
     (property "Datasheet" "~" (id 3) (at 224.155 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C1234 (example)" (id 4) (at 224.155 64.77 0)
+    (property "LCSC" "" (id 4) (at 224.155 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Populate" "DNP" (id 5) (at 224.155 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Alt_LCSC" "C12345 (example)" (id 6) (at 224.155 64.77 0)
+    (property "Alt_LCSC" "" (id 6) (at 224.155 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Price" "0" (id 7) (at 224.155 64.77 0)
@@ -1989,6 +1997,9 @@
     (property "Datasheet" "~" (id 3) (at 209.296 127.762 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "Populate" "DNP" (id 4) (at 204.216 127.762 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 0be761f0-bc0d-42a6-b04d-e037b854c91a))
   )
 
@@ -2061,13 +2072,13 @@
     (property "Datasheet" "~" (id 3) (at 243.205 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C1234 (example)" (id 4) (at 243.205 64.77 0)
+    (property "LCSC" "" (id 4) (at 243.205 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Populate" "DNP" (id 5) (at 243.205 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Alt_LCSC" "C12345 (example)" (id 6) (at 243.205 64.77 0)
+    (property "Alt_LCSC" "" (id 6) (at 243.205 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Price" "0" (id 7) (at 243.205 64.77 0)
@@ -2139,6 +2150,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 209.296 121.666 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Populate" "DNP" (id 4) (at 204.216 121.666 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e60103b8-87fa-4876-a5d1-b5619e968c06))
@@ -2401,7 +2415,7 @@
       (reference "C3") (unit 1) (value "0.1u") (footprint "Capacitor_SMD:C_0201_0603Metric")
     )
     (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/c322890e-14c1-46f5-b267-f55221ee900f"
-      (reference "C4") (unit 1) (value "CT41G-0402-2X1-16V-0.1μF-K(N)") (footprint "Capacitor_SMD:C_0201_0603Metric")
+      (reference "C4") (unit 1) (value "0.1μF") (footprint "Capacitor_SMD:C_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/7312d6c1-286a-4148-a5c3-52b226791586"
       (reference "D1") (unit 1) (value "2V") (footprint "LED_SMD:LED_0805_2012Metric")
@@ -2437,7 +2451,7 @@
       (reference "J5") (unit 1) (value "USB_B_Micro") (footprint "Connector_USB:USB_Micro-B_Amphenol_10103594-0001LF_Horizontal")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/2cb653ae-a486-4999-8f63-2cc2ca83bff5"
-      (reference "L1") (unit 1) (value "MLP2012V4R7MT0S1") (footprint "Inductor_SMD:L_0805_2012Metric")
+      (reference "L1") (unit 1) (value "MLP2012V4R7MT0S1") (footprint "3088HAT:INDC2012X87N")
     )
     (path "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/90369ffc-d873-4b5f-ab01-ddf820143b6f"
       (reference "LDR1") (unit 1) (value "10K - 0.2M") (footprint "Resistor_SMD:R_0201_0603Metric")
@@ -2452,19 +2466,19 @@
       (reference "Q1") (unit 1) (value "2N2222A") (footprint "Package_TO_SOT_THT:TO-92")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/768374ff-fcd3-47db-8a39-62497a662f1b"
-      (reference "R1") (unit 1) (value "1650") (footprint "Resistor_SMD:R_0201_0603Metric")
+      (reference "R1") (unit 1) (value "1800") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/625263f4-7654-4012-90f5-ccfddd1120cf"
       (reference "R2") (unit 1) (value "100ohms") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/ced83566-388d-4f99-be31-41bdc857545a"
-      (reference "R3") (unit 1) (value "100") (footprint "Resistor_SMD:R_0201_0603Metric")
+      (reference "R3") (unit 1) (value "100ohms") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/a6859af7-c2bb-496d-bf21-a4a555131e66"
       (reference "R4") (unit 1) (value "100ohms") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/842d48ad-8b90-46f9-8160-46c5ec76f179"
-      (reference "R5") (unit 1) (value "1000") (footprint "Resistor_SMD:R_0201_0603Metric")
+      (reference "R5") (unit 1) (value "1200") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/6fe27d7a-8728-4218-b48e-6f66377c607f"
       (reference "R6") (unit 1) (value "110k") (footprint "Resistor_SMD:R_0201_0603Metric")
