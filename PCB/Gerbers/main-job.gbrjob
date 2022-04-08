@@ -5,12 +5,12 @@
       "Application": "Pcbnew",
       "Version": "(6.0.2)"
     },
-    "CreationDate": "2022-04-08T18:32:09+02:00"
+    "CreationDate": "2022-04-08T22:25:30+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "main (1)",
-      "GUID": "6d61696e-2028-4312-992e-6b696361645f",
+      "Name": "main",
+      "GUID": "6d61696e-2e6b-4696-9361-645f70636258",
       "Revision": "rev?"
     },
     "Size": {
@@ -24,8 +24,8 @@
   "DesignRules": [
     {
       "Layers": "Outer",
-      "PadToPad": 0.2,
-      "PadToTrack": 0.2,
+      "PadToPad": 0.0,
+      "PadToTrack": 0.0,
       "TrackToTrack": 0.2,
       "MinLineWidth": 0.2,
       "TrackToRegion": 0.508,
@@ -34,47 +34,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "main (1)-F_Cu.gbr",
+      "Path": "main-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "main (1)-B_Cu.gbr",
+      "Path": "main-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "main (1)-F_Paste.gbr",
+      "Path": "main-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "main (1)-B_Paste.gbr",
+      "Path": "main-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "main (1)-F_Silkscreen.gbr",
+      "Path": "main-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "main (1)-B_Silkscreen.gbr",
+      "Path": "main-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "main (1)-F_Mask.gbr",
+      "Path": "main-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "main (1)-B_Mask.gbr",
+      "Path": "main-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "main (1)-Edge_Cuts.gbr",
+      "Path": "main-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
