@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "C:\\Users\\USER\\Desktop\\eee3088f-group-18-project\\PCB\\main\\main.kicad_sch")
-    (date "2022/04/08 18:29:55")
+    (date "2022/04/08 22:15:10")
     (tool "Eeschema (6.0.2)")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
@@ -618,6 +618,7 @@
       (footprint "LM75BD:SOIC127P600X175-8N")
       (datasheet "http://www.ti.com/lit/ds/symlink/lm75b.pdf")
       (fields
+        (field (name "Alt_LCSC") "C2837470")
         (field (name "LCSC") "C2837470")
         (field (name "Populate") "P")
         (field (name "Price") "0.4002"))
@@ -625,6 +626,7 @@
       (property (name "LCSC") (value "C2837470"))
       (property (name "Price") (value "0.4002"))
       (property (name "Populate") (value "P"))
+      (property (name "Alt_LCSC") (value "C2837470"))
       (property (name "Sheetname") (value "Sensing"))
       (property (name "Sheetfile") (value "sensing.kicad_sch"))
       (sheetpath (names "/Sensing/") (tstamps "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/"))
