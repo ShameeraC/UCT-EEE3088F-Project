@@ -1059,7 +1059,7 @@
     (property "Value" "LM75B" (id 1) (at 247.1294 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "LM75BD:SOIC127P600X175-8N" (id 2) (at 245.11 137.16 0)
+    (property "Footprint" "Package_SO:MSOP-8_3x3mm_P0.65mm" (id 2) (at 245.11 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm75b.pdf" (id 3) (at 245.11 137.16 0)

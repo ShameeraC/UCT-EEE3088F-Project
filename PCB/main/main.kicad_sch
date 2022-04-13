@@ -2433,7 +2433,7 @@
       (reference "EEPROM1") (unit 1) (value "AT24C256C-SSHL-T") (footprint "SOIC127P600X175-8N:EEPROM")
     )
     (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/828dbe95-df72-484b-8359-7d74924a9081"
-      (reference "FTDI(UART)1") (unit 1) (value "CH340C") (footprint "CH340C:SOIC127P600X180-16N")
+      (reference "FTDI1") (unit 1) (value "CH340C") (footprint "Package_SO:SOP-16_3.9x9.9mm_P1.27mm")
     )
     (path "/ae3c331f-8808-430e-931c-7d9b2cc37f5b"
       (reference "J1") (unit 1) (value "Conn_01x33_Female") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x33_P2.54mm_Vertical")
@@ -2469,13 +2469,13 @@
       (reference "R1") (unit 1) (value "1800") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/625263f4-7654-4012-90f5-ccfddd1120cf"
-      (reference "R2") (unit 1) (value "100ohms") (footprint "Resistor_SMD:R_0201_0603Metric")
+      (reference "R2") (unit 1) (value "100") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/ced83566-388d-4f99-be31-41bdc857545a"
-      (reference "R3") (unit 1) (value "100ohms") (footprint "Resistor_SMD:R_0201_0603Metric")
+      (reference "R3") (unit 1) (value "100") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/a6859af7-c2bb-496d-bf21-a4a555131e66"
-      (reference "R4") (unit 1) (value "100ohms") (footprint "Resistor_SMD:R_0201_0603Metric")
+      (reference "R4") (unit 1) (value "100") (footprint "Resistor_SMD:R_0201_0603Metric")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/842d48ad-8b90-46f9-8160-46c5ec76f179"
       (reference "R5") (unit 1) (value "1200") (footprint "Resistor_SMD:R_0201_0603Metric")
@@ -2547,7 +2547,7 @@
       (reference "TP5") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm")
     )
     (path "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/ee0404f1-775a-4f9c-8b75-b98271704a27"
-      (reference "TempSensor1") (unit 1) (value "LM75B") (footprint "LM75BD:SOIC127P600X175-8N")
+      (reference "TempSensor1") (unit 1) (value "LM75B") (footprint "Package_SO:MSOP-8_3x3mm_P0.65mm")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/f9cafb0f-1849-4538-b7c6-d7aca14cae51"
       (reference "U1") (unit 1) (value "TP4054") (footprint "Package_TO_SOT_SMD:SOT-23-5")
