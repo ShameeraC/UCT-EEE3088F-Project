@@ -2429,12 +2429,6 @@
     (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/b0c361d6-e612-4920-8d91-20a53c819a11"
       (reference "D4") (unit 1) (value "DIODE") (footprint "LED_SMD:LED_0805_2012Metric")
     )
-    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/58fae10d-308e-47e5-984f-762671ff5f7b"
-      (reference "EEPROM1") (unit 1) (value "AT24C256C-SSHL-T") (footprint "SOIC127P600X175-8N:EEPROM")
-    )
-    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/828dbe95-df72-484b-8359-7d74924a9081"
-      (reference "FTDI1") (unit 1) (value "CH340C") (footprint "Package_SO:SOP-16_3.9x9.9mm_P1.27mm")
-    )
     (path "/ae3c331f-8808-430e-931c-7d9b2cc37f5b"
       (reference "J1") (unit 1) (value "Conn_01x33_Female") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x33_P2.54mm_Vertical")
     )
@@ -2546,14 +2540,20 @@
     (path "/296f7876-e84a-49c1-bb28-31b2f8a6d757"
       (reference "TP5") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm")
     )
-    (path "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/ee0404f1-775a-4f9c-8b75-b98271704a27"
-      (reference "TempSensor1") (unit 1) (value "LM75B") (footprint "Package_SO:MSOP-8_3x3mm_P0.65mm")
-    )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/f9cafb0f-1849-4538-b7c6-d7aca14cae51"
       (reference "U1") (unit 1) (value "TP4054") (footprint "Package_TO_SOT_SMD:SOT-23-5")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/757f2058-a037-4d99-9b33-f2b34ac75d1d"
       (reference "U2") (unit 1) (value "MT3608L") (footprint "Package_TO_SOT_SMD:SOT-23-6")
+    )
+    (path "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/ee0404f1-775a-4f9c-8b75-b98271704a27"
+      (reference "U3") (unit 1) (value "LM75B") (footprint "LM75BD:SOIC127P600X175-8N")
+    )
+    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/58fae10d-308e-47e5-984f-762671ff5f7b"
+      (reference "U4") (unit 1) (value "AT24C256C-SSHL-T") (footprint "SOIC127P600X175-8N:EEPROM")
+    )
+    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/828dbe95-df72-484b-8359-7d74924a9081"
+      (reference "U5") (unit 1) (value "CH340C") (footprint "Package_SO:SOP-16_3.9x9.9mm_P1.27mm")
     )
   )
 )
