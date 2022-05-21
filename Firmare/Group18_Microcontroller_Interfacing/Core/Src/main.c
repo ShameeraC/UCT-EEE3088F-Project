@@ -59,8 +59,9 @@ static void MX_USART1_UART_Init(void);
 void debugPrintln(UART_HandleTypeDef *uart_handle, char _out[]);
 void demoDataTransfer();
 void checkAddress(UART_HandleTypeDef * huart, I2C_HandleTypeDef * hi2c, uint16_t DevAddress, uint32_t Num_Trials, uint32_t Timeout);
-void writeToI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result) {
-void readFromI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result) {
+void writeToI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result);
+void readFromI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result);
+void lightSensingInit();
 
 /* USER CODE BEGIN PFP */
 
@@ -130,6 +131,36 @@ void readFromI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_
 		debugPrintln(&huart2, "Read from address FAILED");
 	}
 
+    void lightSensingInit(){
+        // Test case: Set GPIO pin high.
+        //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+
+        // Get ADC values for 2 pins that the LDRS are connected to.
+        HAL_ADC_Start(&hadc1); //Start HAL_ADC for first ADC pin.
+        HAL_ADC_Start(&hadc2); //Start HAL_ADC for second ADC pin.
+        HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY); //Poll ADC pin 1 for conversion (of the first LDR).
+        raw = HAL_ADC_GetValue(&hadc1); //Get digital value
+        HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY); //Poll ADC pin 2 for conversion (of the second LDR).
+        raw2 = HAL_ADC_GetValue(&hadc2); //Get digital value.
+
+        // Test: Set GPIO pin low
+        //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);
+        if (raw>raw2){ //if LDR1 has more light on it than LDR2:
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET); //Turn LDR2 off.
+            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET); //Turn LDR1 on.
+        }
+        else if (raw2>raw){ //else, if LDR2 has more light on it than LDR1:
+            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET); //Turn LDR1 off.
+            HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); //Turn LDR2 on.
+        }
+        // Convert to string and print
+        sprintf(msg, "%hu\r\n", raw);
+        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        sprintf(msg, "%hu\r\n", raw2);
+        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        // Pretend we have to do something else for a while
+        HAL_Delay(1);
+    }
 
 /* USER CODE END 0 */
 
@@ -187,6 +218,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+      //LDR TESTING FUNCTION CALL:
+      lightSensingInit(); //This toggles the connected LEDs depending on the light on the LDRS on the HAT.
+
     /* USER CODE END WHILE */
 	  //Demo sending data over UART to laptop
 	  //uncomment out the following line and comment all other loop code out to test sending data over UART to laptop
