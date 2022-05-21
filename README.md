@@ -40,9 +40,17 @@ This project is a group project for the course EEE3088F at UCT. The purpose of t
 
     - Running Your First Program on the HAT - 
 
-    To run your first program on the HAT, refer to the self-explanatory code in the "firstProgram" file
-    in the "Simulation/" directory. Comments are included to help you through the process of writing an
-    initial program to run on the HAT.
+    To run your first program on the HAT, refer to the self-explanatory code in the "main.c" file
+    in the following directory:
+    "Firmware/GROUP18 Microcontroler Interfacing/Core/src/main.c"
+    This file can be run to toggle two user connected LEDs based on the strength of light sensed by
+    the LDRs on the HAT. To set up the hardware for this basic program, two LEDs should be connected
+    in series with 1k resistors which will be connected to GPIOA and GPIOB on the STM (GPIO pin 10 and
+    pin 12 respectively). Alternitavely, the LEDs on the STM can be flashed based on the state of the
+    LDRs if the STM LEDs are set to "HIGH" in the lightSensingInit() function (this would need to be
+    added). Inside of the while loop in the code, the first statement is a call to initialize the light
+    sensing sequence, and so everything is set up for ease of use.
+    Have fun!! 
 
 # Directories:
 This repo has the following subfolders, which provide a useful common structure for custom electronics projects: \
