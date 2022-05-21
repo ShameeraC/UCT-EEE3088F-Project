@@ -56,21 +56,81 @@ static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_USART1_UART_Init(void);
+void debugPrintln(UART_HandleTypeDef *uart_handle, char _out[]);
+void demoDataTransfer();
+void checkAddress(UART_HandleTypeDef * huart, I2C_HandleTypeDef * hi2c, uint16_t DevAddress, uint32_t Num_Trials, uint32_t Timeout);
+void writeToI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result) {
+void readFromI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result) {
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-//General purpose Function to send a char array over
-//the UART and to automatically send a new line
-//character after it
-void debugPrintln(UART_HandleTypeDef *uart_handle,
-char _out[]){
-	HAL_UART_Transmit(uart_handle, (uint8_t *) _out, strlen(_out), 60);
-	char newline[2] = "\r\n";
-	HAL_UART_Transmit(uart_handle, (uint8_t *) newline, 2, 10);
-}
+	//General purpose Function to send a char array over
+	//the UART and to automatically send a new line
+	//character after it
+	void debugPrintln(UART_HandleTypeDef *uart_handle, char _out[]){
+		HAL_UART_Transmit(uart_handle, (uint8_t *) _out, strlen(_out), 60);
+		char newline[2] = "\r\n";
+		HAL_UART_Transmit(uart_handle, (uint8_t *) newline, 2, 10);
+	}
+
+	//Demo sending data over UART to laptop
+	void demoDataTransfer(){
+	debugPrintln(&huart1, "Hello, this is STMF0 Discovery board"); // print full line
+	//Flash Blue LED
+	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_8);
+	HAL_Delay(1000);
+	}
+
+	void checkAddress(UART_HandleTypeDef * huart, I2C_HandleTypeDef * hi2c, uint16_t DevAddress, uint32_t Num_Trials, uint32_t Timeout){
+		uint8_t i = 0, I2Creturn;
+		uint8_t strbuf[40] = { 0 };
+
+		for (i = 1; i < 128; i++) {
+			I2Creturn = HAL_I2C_IsDeviceReady(&hi2c,DevAddress, Num_Trials, Timeout);
+			if (I2Creturn != HAL_OK){ //No ACK Received At That Address
+				debugPrintln(&huart, "No ACK recieved");
+			}
+
+			else if (I2Creturn == HAL_OK) { //ACK Received At That Address
+				sprintf(strbuf, "ACK received on address: 0x%X", i);
+				debugPrintln(&huart, strbuf);
+			}
+
+			HAL_Delay(100);
+		}
+
+		debugPrintln(&huart, "#######Scanning done######");
+	}
+
+	void writeToI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result) {
+		uint8_t *sData = &Data;
+		uint8_t *rData = &Result;
+		memset(str, 0, sizeof(str));
+		sprintf(str, "Writing 0x%X to EEPROM address 0x%X", Data, madd);
+		debugPrintln(&huart2, str);
+		I2CReturn = HAL_I2C_Mem_Write(&hi2c1, EEPROM_DEVICE_ADDR, madd, 2, sData, 1, HAL_MAX_DELAY);
+		if (I2CReturn != HAL_OK) {
+		debugPrintln(&huart2, "Write to address FAILED");
+		}
+
+	}
+
+	void readFromI2C(uint16_t EEPROM_DEVICE_ADDR, uint8_t madd, uint8_t Data, uint8_t Result) {
+		uint8_t *sData = &Data;
+		uint8_t *rData = &Result;
+		memset(str, 0, sizeof(str));
+		sprintf(str, "Reading from EEPROM address 0x%X ", madd);
+		debugPrintln(&huart2, str);
+		I2CReturn = HAL_I2C_Mem_Read(&hi2c1, EEPROM_DEVICE_ADDR, madd, 2, rData, 1, HAL_MAX_DELAY);
+		if (I2CReturn != HAL_OK) {
+		debugPrintln(&huart2, "Read from address FAILED");
+	}
+
+
 /* USER CODE END 0 */
 
 /**
@@ -105,6 +165,21 @@ int main(void)
   MX_I2C2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  checkAddress(&huart1, &hi2c1,(uint16_t) (i << 1), 3, 5);
+
+  char str[60] = { 0 }; //Useful buffer for printing to UART
+  uint8_t I2CReturn = 0; //Status var to indicate if HAL_I2C operation has succeeded (1) or failed (0);
+  uint8_t i, j, Loop = 0; //Loop counters
+
+  //Setup variables for reading and writing
+  uint16_t EEPROM_DEVICE_ADDR = 0x55 << 1; //Address of EEPROM device on I2C bus
+  uint16_t madd = 0x00; //Memory address variable containing a starting memory address for a location of memory in the EEPROM
+  uint8_t Data = 0x10;//Data variable containing sStarting value to write to memory, could be any 8bit value
+  uint8_t *sData = &Data; //Pointer to sending Data variable
+  uint8_t Result = 0x00; //Variable to stored value read back from memory in
+  uint8_t *rData = &Result; //Pointer to result data variable
+  //Say hello over UART
+  debugPrintln(&huart1, "Hello, this is STMF0 Discovery board: ");
 
   /* USER CODE END 2 */
 
@@ -113,11 +188,52 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  //Demo sending data over UART2 to laptop
-	  debugPrintln(&huart1, "Hello, this is STMF0 Discovery board"); // print full line
-	  //Flash Blue LED
+	  //Demo sending data over UART to laptop
+	  //uncomment out the following line and comment all other loop code out to test sending data over UART to laptop
+	  //demoDataTransfer();
+
+	  //Print and increment a loop counter for visual tracking/debugging purposes only
+	  memset(str, 0, sizeof(str)); //Reset str to zeros
+	  sprintf(str, "\rLoop count %d\n", Loop);//Format string to include the loop counter variable
+	  debugPrintln(&huart2, str);
+	  Loop = Loop + 1;
+
+	  //Write and read back 5 different values to 5 different memory locations
+	  for (i = 0; i < 5; i++) {
+		  writeToI2C(EEPROM_DEVICE_ADDR, madd, Data, Result);
+		  readFromI2C(EEPROM_DEVICE_ADDR, madd, Data, Result);
+		  //PRINT READ VALUE
+		  memset(str, 0, sizeof(str));
+		  sprintf(str, "Received data: 0x%X \n", Result);
+		  debugPrintln(&huart2, str);
+		  //Increment address and data values and clear Result holder
+		  madd = madd + 1;
+		  Data = Data + 1;
+		  Result = 0x00;
+		  HAL_Delay(1000); //Pause
+		  } //End for loop of reading and writing 5 addresses
+
+	  //Read back last 5 values again:
+	  madd = madd - 5;
+	  for (j = 0; j < 5; j++) {
+		  I2CReturn = HAL_I2C_Mem_Read(&hi2c1, EEPROM_DEVICE_ADDR, madd, 2, rData, 1, HAL_MAX_DELAY);
+	  if (I2CReturn != HAL_OK) {
+		  debugPrintln(&huart2, "Read from address FAILED");
+	  }
+
+	  //PRINT READ VALUE
+	  memset(str, 0, sizeof(str));
+	  sprintf(str, "Address 0x%X contains: 0x%X ", madd, Result);
+	  debugPrintln(&huart2, str);
+	  madd = madd + 1;
+	  }
+
+	  debugPrintln(&huart2, "-------------"); //Draw a line under a series of 5 before next while loop begins
+	  //Flash Blue LED as visual check code is running
 	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_8);
-	  HAL_Delay(1000);
+	  HAL_Delay(DELAY);
+
+	  }
 
     /* USER CODE BEGIN 3 */
   }
